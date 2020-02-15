@@ -1,0 +1,232 @@
+
+Dharme@DESKTOP-248I0ES MINGW64 ~/Music/MyWorkSpace/Git
+$ git init
+Initialized empty Git repository in C:/Users/Dharme/Music/MyWorkSpace/Git/.git/
+
+Dharme@DESKTOP-248I0ES MINGW64 ~/Music/MyWorkSpace/Git (master)
+$ git remote add origin "https://github.com/thalaridharmender/MyFirst-GitRepository.git"
+
+Dharme@DESKTOP-248I0ES MINGW64 ~/Music/MyWorkSpace/Git (master)
+$ ls
+
+Dharme@DESKTOP-248I0ES MINGW64 ~/Music/MyWorkSpace/Git (master)
+$ git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+
+Dharme@DESKTOP-248I0ES MINGW64 ~/Music/MyWorkSpace/Git (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        TesingFile.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Dharme@DESKTOP-248I0ES MINGW64 ~/Music/MyWorkSpace/Git (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        TestingDoc.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Dharme@DESKTOP-248I0ES MINGW64 ~/Music/MyWorkSpace/Git (master)
+$ git add TestingDoc.txt
+
+Dharme@DESKTOP-248I0ES MINGW64 ~/Music/MyWorkSpace/Git (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+        new file:   TestingDoc.txt
+
+
+Dharme@DESKTOP-248I0ES MINGW64 ~/Music/MyWorkSpace/Git (master)
+$ git commit -m "My first testind doc commited"
+[master (root-commit) 99cc433] My first testind doc commited
+ 1 file changed, 1 insertion(+)
+ create mode 100644 TestingDoc.txt
+
+Dharme@DESKTOP-248I0ES MINGW64 ~/Music/MyWorkSpace/Git (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Dharme@DESKTOP-248I0ES MINGW64 ~/Music/MyWorkSpace/Git (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        Sample1.txt
+        Sample2.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Dharme@DESKTOP-248I0ES MINGW64 ~/Music/MyWorkSpace/Git (master)
+$ git add -A
+
+Dharme@DESKTOP-248I0ES MINGW64 ~/Music/MyWorkSpace/Git (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   Sample1.txt
+        new file:   Sample2.txt
+
+
+Dharme@DESKTOP-248I0ES MINGW64 ~/Music/MyWorkSpace/Git (master)
+$ git commit -a -m "commiting 2 sample docs at once"
+[master df4625f] commiting 2 sample docs at once
+ 2 files changed, 2 insertions(+)
+ create mode 100644 Sample1.txt
+ create mode 100644 Sample2.txt
+
+Dharme@DESKTOP-248I0ES MINGW64 ~/Music/MyWorkSpace/Git (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Dharme@DESKTOP-248I0ES MINGW64 ~/Music/MyWorkSpace/Git (master)
+$ git branch firstbranch
+
+Dharme@DESKTOP-248I0ES MINGW64 ~/Music/MyWorkSpace/Git (master)
+$ git checkout firstbranch
+Switched to branch 'firstbranch'
+
+Dharme@DESKTOP-248I0ES MINGW64 ~/Music/MyWorkSpace/Git (firstbranch)
+$ git status
+On branch firstbranch
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        Sample3.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Dharme@DESKTOP-248I0ES MINGW64 ~/Music/MyWorkSpace/Git (firstbranch)
+$ git add Sample3.txt
+
+Dharme@DESKTOP-248I0ES MINGW64 ~/Music/MyWorkSpace/Git (firstbranch)
+$ git status
+On branch firstbranch
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   Sample3.txt
+
+
+Dharme@DESKTOP-248I0ES MINGW64 ~/Music/MyWorkSpace/Git (firstbranch)
+$ git commit -m "commiting on firstbranch"
+[firstbranch b1f8f3f] commiting on firstbranch
+ 1 file changed, 1 insertion(+)
+ create mode 100644 Sample3.txt
+
+Dharme@DESKTOP-248I0ES MINGW64 ~/Music/MyWorkSpace/Git (firstbranch)
+$ git status
+On branch firstbranch
+nothing to commit, working tree clean
+
+Dharme@DESKTOP-248I0ES MINGW64 ~/Music/MyWorkSpace/Git (firstbranch)
+$ ls
+Sample1.txt  Sample2.txt  Sample3.txt  TestingDoc.txt
+
+Dharme@DESKTOP-248I0ES MINGW64 ~/Music/MyWorkSpace/Git (firstbranch)
+$ git checkout master
+Switched to branch 'master'
+
+Dharme@DESKTOP-248I0ES MINGW64 ~/Music/MyWorkSpace/Git (master)
+$ ls
+Sample1.txt  Sample2.txt  TestingDoc.txt
+
+Dharme@DESKTOP-248I0ES MINGW64 ~/Music/MyWorkSpace/Git (master)
+$ git merge firstbranch
+Updating df4625f..b1f8f3f
+Fast-forward
+ Sample3.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 Sample3.txt
+
+Dharme@DESKTOP-248I0ES MINGW64 ~/Music/MyWorkSpace/Git (master)
+$ ls
+Sample1.txt  Sample2.txt  Sample3.txt  TestingDoc.txt
+
+Dharme@DESKTOP-248I0ES MINGW64 ~/Music/MyWorkSpace/Git (master)
+$ git checkout firstbranch
+Switched to branch 'firstbranch'
+
+Dharme@DESKTOP-248I0ES MINGW64 ~/Music/MyWorkSpace/Git (firstbranch)
+$ git status
+On branch firstbranch
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   Sample3.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Dharme@DESKTOP-248I0ES MINGW64 ~/Music/MyWorkSpace/Git (firstbranch)
+$ git add Sample3.txt
+
+Dharme@DESKTOP-248I0ES MINGW64 ~/Music/MyWorkSpace/Git (firstbranch)
+$ git commit -m "changes on sample3 after merge"
+[firstbranch 6e06217] changes on sample3 after merge
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+Dharme@DESKTOP-248I0ES MINGW64 ~/Music/MyWorkSpace/Git (firstbranch)
+$ ls
+Sample1.txt  Sample2.txt  Sample3.txt  TestingDoc.txt
+
+Dharme@DESKTOP-248I0ES MINGW64 ~/Music/MyWorkSpace/Git (firstbranch)
+$ cat Sample3.txt
+Sample data 3 on firstbranch
+
+Making changes to see whether its reflecting on master or not.
+Dharme@DESKTOP-248I0ES MINGW64 ~/Music/MyWorkSpace/Git (firstbranch)
+$ git checkout master
+Switched to branch 'master'
+
+Dharme@DESKTOP-248I0ES MINGW64 ~/Music/MyWorkSpace/Git (master)
+$ ls
+Sample1.txt  Sample2.txt  Sample3.txt  TestingDoc.txt
+
+Dharme@DESKTOP-248I0ES MINGW64 ~/Music/MyWorkSpace/Git (master)
+$ cat sample3.txt
+Sample data 3 on firstbranch
+Dharme@DESKTOP-248I0ES MINGW64 ~/Music/MyWorkSpace/Git (master)
+$ git merge firstbranch
+Updating b1f8f3f..6e06217
+Fast-forward
+ Sample3.txt | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+Dharme@DESKTOP-248I0ES MINGW64 ~/Music/MyWorkSpace/Git (master)
+$ ls
+Sample1.txt  Sample2.txt  Sample3.txt  TestingDoc.txt
+
+Dharme@DESKTOP-248I0ES MINGW64 ~/Music/MyWorkSpace/Git (master)
+$ cat Sample3.txt
+Sample data 3 on firstbranch
+
+Making changes to see whether its reflecting on master or not.
+Dharme@DESKTOP-248I0ES MINGW64 ~/Music/MyWorkSpace/Git (master)
+$
